@@ -1,8 +1,8 @@
 # 👋 Ciao, sono Davvoz!
 
-## 💼 Full Stack Developer | Blockchain Enthusiast | Audio Engineer
+## 💼 Sviluppatore Web | Appassionato di Tecnologia
 
-Benvenuto nel mio profilo GitHub! Sono uno sviluppatore full-stack specializzato in applicazioni web, blockchain e multimedia. Con oltre 8 anni di esperienza nello sviluppo software, ho creato 60+ progetti che spaziano dall'audio processing alla blockchain integration.
+Benvenuto nel mio profilo GitHub! Sono uno sviluppatore che sperimenta con diverse tecnologie web, audio e blockchain. Mi piace creare progetti per imparare e divertirmi.
 
 ## 📊 Report Dettagliato delle Mie Repository
 
@@ -68,66 +68,66 @@ Questi sono i progetti con più contenuto:
 ### 🎮 Gaming & Entertainment
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **cur8fun** | Web app JavaScript interattiva con integrazione blockchain e GitHub Pages | JavaScript, Blockchain | ⭐ 2 |
-| **monopoli** | Implementazione completa del gioco Monopoli con logica di gioco avanzata | JavaScript | ⭐ 1 |
-| **steem-faucet-game** | Gioco faucet con integrazione Steem blockchain e meccaniche gamification | TypeScript, Blockchain | ⭐ 1 |
-| **Arkanoid-by-gpt-3** | Clone del classico Arkanoid sviluppato con assistenza AI GPT-3 | JavaScript, AI | - |
-| **game-of-life** | Implementazione del celebre Game of Life di Conway con visualizzazione canvas | JavaScript | - |
+| **cur8fun** | App web con blockchain | JavaScript, Blockchain | ⭐ 2 |
+| **monopoli** | Gioco Monopoli in JavaScript | JavaScript | ⭐ 1 |
+| **steem-faucet-game** | Gioco faucet con Steem | TypeScript, Blockchain | ⭐ 1 |
+| **Arkanoid-by-gpt-3** | Arkanoid fatto con aiuto di GPT-3 | JavaScript | - |
+| **game-of-life** | Game of Life di Conway | JavaScript | - |
 
-### 🎵 Audio & Music Production
+### 🎵 Audio & Music
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **Audio-visualizer** | Visualizzatore audio avanzato con analisi spettrale in tempo reale (179+ MB) | JavaScript, Web Audio API | - |
-| **music_studio** | Studio musicale completo basato su web con synth e mixer | JavaScript | ⭐ 1 |
-| **sequencer** | Sequencer musicale interattivo per produzione beat e pattern | TypeScript | ⭐ 1 |
-| **ableton-angular-daw** | Digital Audio Workstation professionale sviluppata con Angular | Angular, TypeScript | - |
-| **piano-roll** | Editor piano roll per composizione musicale MIDI | TypeScript | - |
-| **beat-box-app** | Applicazione beatbox con drum pad virtuali | TypeScript | - |
-| **BeatBoxi** | Drum machine con pattern sequencer | JavaScript | - |
+| **Audio-visualizer** | Visualizzatore audio (179+ MB) | JavaScript, Web Audio API | - |
+| **music_studio** | Esperimento di studio musicale web | JavaScript | ⭐ 1 |
+| **sequencer** | Sequencer musicale | TypeScript | ⭐ 1 |
+| **ableton-angular-daw** | Prova di DAW con Angular | Angular, TypeScript | - |
+| **piano-roll** | Editor piano roll | TypeScript | - |
+| **beat-box-app** | App beatbox | TypeScript | - |
+| **BeatBoxi** | Drum machine | JavaScript | - |
 
-### 🎨 Graphics & Visual Computing
+### 🎨 Graphics & Visual
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **nice-shapes-and-poligons-by-codex-and-me** | Esperimenti grafici generativi con forme geometriche complesse | JavaScript, Canvas | ⭐ 1 |
-| **all-in-a-canvas-knob-by-codex-and-me** | Controlli canvas interattivi custom per applicazioni audio | JavaScript, Canvas | ⭐ 1 |
-| **FallingElements** | Sistema di animazione particellare con fisica realistica | JavaScript | ⭐ 1 |
-| **VisualFXs** | Libreria di effetti visivi HTML/CSS avanzati | HTML, CSS | - |
-| **canvasfwk** | Framework personalizzato per sviluppo canvas 2D | JavaScript | - |
-| **sito_artistico** | Portfolio artistico con galleria multimediale (17+ MB) | CSS, HTML | - |
+| **nice-shapes-and-poligons-by-codex-and-me** | Forme geometriche (con aiuto Codex) | JavaScript, Canvas | ⭐ 1 |
+| **all-in-a-canvas-knob-by-codex-and-me** | Controlli canvas (con aiuto Codex) | JavaScript, Canvas | ⭐ 1 |
+| **FallingElements** | Animazione di elementi che cadono | JavaScript | ⭐ 1 |
+| **VisualFXs** | Effetti visivi HTML/CSS | HTML, CSS | - |
+| **canvasfwk** | Esperimenti con canvas | JavaScript | - |
+| **sito_artistico** | Sito portfolio (17+ MB) | CSS, HTML | - |
 
-### 🔗 Blockchain & Decentralized Apps
+### 🔗 Blockchain
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **cur8** | Piattaforma di content curation con tokenomics | TypeScript, Blockchain | - |
-| **cur8hive** | Integrazione completa con Hive blockchain (15+ MB) | HTML, Blockchain | - |
-| **cur8-steem-telegram** | Bot Telegram per interazione con Steem blockchain | JavaScript | ⭐ 1 |
-| **mr_steem** | Suite di utilities per sviluppatori Steem | JavaScript | - |
-| **steem-sniper** | Tool automatizzato per operazioni Steem | JavaScript | - |
-| **faucet_cyber** | Cryptocurrency faucet distributor | JavaScript | - |
+| **cur8** | App di content curation | TypeScript, Blockchain | - |
+| **cur8hive** | Integrazione con Hive (15+ MB) | HTML, Blockchain | - |
+| **cur8-steem-telegram** | Bot Telegram per Steem | JavaScript | ⭐ 1 |
+| **mr_steem** | Utilities per Steem | JavaScript | - |
+| **steem-sniper** | Tool per Steem | JavaScript | - |
+| **faucet_cyber** | Faucet crypto | JavaScript | - |
 
 ### 🤖 AI & Machine Learning
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **Deforum_Stable_Diffusion_Davvoz** | Fork personalizzato di Stable Diffusion per generazione video | Python, AI | - |
-| **ai_text_studio_by_luciogiolli** | Studio di elaborazione testo potenziato da AI | JavaScript, AI | - |
-| **image_generator** | Generatore di immagini basato su AI | JavaScript, AI | - |
+| **Deforum_Stable_Diffusion_Davvoz** | Fork di Stable Diffusion | Python, AI | - |
+| **ai_text_studio_by_luciogiolli** | Elaborazione testo con AI | JavaScript, AI | - |
+| **image_generator** | Generatore immagini AI | JavaScript, AI | - |
 
-### 🛠️ Development Tools & Frameworks
+### 🛠️ Development Tools
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **ableton-session-clone** | Clone di sessioni Ableton per sviluppo DAW | JavaScript | - |
-| **Test-daw-1** | Prototipo DAW sviluppato in C++ per performance | C++ | ⭐ 1 |
-| **provawasm** | Esperimenti con WebAssembly per ottimizzazione performance | JavaScript, WASM | ⭐ 1 |
-| **RustHtmlTest** | Integrazione Rust/HTML per applicazioni web performanti | Rust | ⭐ 1 |
+| **ableton-session-clone** | Test clone sessioni Ableton | JavaScript | - |
+| **Test-daw-1** | Prova di DAW in C++ | C++ | ⭐ 1 |
+| **provawasm** | Esperimenti WebAssembly | JavaScript, WASM | ⭐ 1 |
+| **RustHtmlTest** | Test Rust/HTML | Rust | ⭐ 1 |
 
-### 🌐 Web Development & Sites
+### 🌐 Web Development
 | Progetto | Descrizione | Tech Stack | Stars |
 |----------|-------------|------------|-------|
-| **sito_bar** | Sito web responsive per locale commerciale | HTML, CSS | - |
-| **sito_promozionale** | Landing page promozionale ottimizzata SEO | HTML, CSS | - |
-| **Portfolio_HOME** | Portfolio personale professionale | HTML, CSS, JS | - |
-| **gallery** | Galleria immagini con lightbox e responsive design | JavaScript | - |
-| **space-station** | Progetto space-themed interattivo | JavaScript | fork: 1 |
+| **sito_bar** | Sito per bar | HTML, CSS | - |
+| **sito_promozionale** | Landing page | HTML, CSS | - |
+| **Portfolio_HOME** | Portfolio personale | HTML, CSS, JS | - |
+| **gallery** | Galleria immagini | JavaScript | - |
+| **space-station** | Progetto spaziale | JavaScript | fork: 1 |
 
 ---
 
@@ -141,93 +141,83 @@ Questi sono i progetti con più contenuto:
 
 ---
 
-## 🔥 Highlights & Achievements
+## 🔥 In Breve
 
-- 🎯 **60+** progetti pubblici su GitHub
-- 💻 **8** linguaggi di programmazione differenti
+- 🎯 **60** progetti pubblici (molti esperimenti e prototipi)
+- 💻 **8** linguaggi usati (alcuni solo per prove)
 - ⭐ **20** stelle dalla community
-- 🌐 **25** repository con siti web pubblicati tramite GitHub Pages
-- 📈 Attivo dal **2017** - 8+ anni di sviluppo continuo
-- 🚀 **34** nuovi progetti negli ultimi 2 anni (2024-2025)
-- 📝 **~3.2M** linee di codice totali
+- 🌐 **25** progetti con GitHub Pages
+- 📈 Attivo dal **2017**
 - 💾 **309+ MB** di codice e risorse
 
 ---
 
 ## 🎨 Stack Tecnologico e Competenze
 
-### 📊 Valutazione Competenze
-*Legenda: A (Eccellente) | B (Avanzato) | C (Intermedio) | D (Base) | E (Principiante)*
+### 📊 Competenze
+*Legenda: ⭐⭐⭐ Buono | ⭐⭐ Intermedio | ⭐ Base*
 
 #### Frontend Development
-| Tecnologia | Livello | Progetti | Esperienza |
-|------------|---------|----------|------------|
-| **JavaScript** | **A** | 27 repos | 8+ anni - Linguaggio principale per progetti web e applicazioni interattive |
-| **TypeScript** | **A** | 14 repos | 5+ anni - Sviluppo applicazioni enterprise e type-safe |
-| **HTML/CSS** | **A** | 11 repos | 8+ anni - Design responsive e UI moderne |
-| **Angular** | **B** | Multiple | 3+ anni - Framework per applicazioni scalabili |
-| **Canvas API** | **A** | 10+ repos | 5+ anni - Grafica 2D avanzata e animazioni |
-| **Web Audio API** | **A** | 8+ repos | 5+ anni - Sintesi audio, visualizzatori e DAW |
+| Tecnologia | Livello | Progetti | Note |
+|------------|---------|----------|------|
+| **JavaScript** | ⭐⭐⭐ | 27 repos | Linguaggio che uso di più |
+| **TypeScript** | ⭐⭐ | 14 repos | Lo uso quando serve |
+| **HTML/CSS** | ⭐⭐⭐ | 11 repos | Le basi |
+| **Angular** | ⭐⭐ | Alcuni | Esperimenti vari |
+| **Canvas API** | ⭐⭐ | 10+ repos | Mi piace fare grafica |
+| **Web Audio API** | ⭐⭐ | 8+ repos | Progetti audio |
 
 #### Backend & Tools
-| Tecnologia | Livello | Progetti | Esperienza |
-|------------|---------|----------|------------|
-| **Node.js** | **B** | Multiple | 5+ anni - API REST e backend services |
-| **REST APIs** | **B** | Multiple | 5+ anni - Design e implementazione API |
-| **WebAssembly** | **C** | 2 repos | 2+ anni - Ottimizzazione performance |
-| **Python** | **C** | 3 repos | 3+ anni - Data analysis e Jupyter notebooks |
+| Tecnologia | Livello | Progetti | Note |
+|------------|---------|----------|------|
+| **Node.js** | ⭐⭐ | Alcuni | Per server semplici |
+| **REST APIs** | ⭐⭐ | Alcuni | Quando serve |
+| **WebAssembly** | ⭐ | 2 repos | Prove e test |
+| **Python** | ⭐ | 3 repos | Notebook per AI |
 
-#### Blockchain Technology
-| Tecnologia | Livello | Progetti | Esperienza |
-|------------|---------|----------|------------|
-| **Steem** | **B** | 5+ repos | 4+ anni - Integrazione blockchain e DApps |
-| **Hive** | **B** | 3 repos | 3+ anni - Sviluppo ecosistema Hive |
-| **Web3** | **C** | Multiple | 2+ anni - Smart contracts e DeFi |
+#### Blockchain
+| Tecnologia | Livello | Progetti | Note |
+|------------|---------|----------|------|
+| **Steem** | ⭐⭐ | 5+ repos | Ho fatto alcuni esperimenti |
+| **Hive** | ⭐⭐ | 3 repos | Integrazioni base |
+| **Web3** | ⭐ | Alcuni | Sto imparando |
 
 #### Multimedia & Graphics
-| Tecnologia | Livello | Progetti | Esperienza |
-|------------|---------|----------|------------|
-| **Audio Processing** | **A** | 8+ repos | 6+ anni - DSP, sintesi e analisi audio |
-| **Video Processing** | **C** | Few | 2+ anni - Elaborazione e manipolazione video |
-| **Graphics & Animation** | **A** | 10+ repos | 6+ anni - Canvas, WebGL e animazioni complesse |
+| Tecnologia | Livello | Progetti | Note |
+|------------|---------|----------|------|
+| **Audio Processing** | ⭐⭐ | 8+ repos | Mi piace molto l'audio |
+| **Video Processing** | ⭐ | Pochi | Qualche test |
+| **Graphics & Animation** | ⭐⭐ | 10+ repos | Canvas e animazioni |
 
 #### AI & Machine Learning
-| Tecnologia | Livello | Progetti | Esperienza |
-|------------|---------|----------|------------|
-| **Stable Diffusion** | **C** | 1 fork | 1+ anno - Generazione immagini AI |
-| **GPT Integration** | **C** | 2+ repos | 2+ anni - AI-assisted development |
-| **Image Generation** | **C** | 1 repo | 1+ anno - AI generative art |
+| Tecnologia | Livello | Progetti | Note |
+|------------|---------|----------|------|
+| **Stable Diffusion** | ⭐ | 1 fork | Fork per provare |
+| **GPT Integration** | ⭐ | 2+ repos | Ho usato GPT per aiuto |
+| **Image Generation** | ⭐ | 1 repo | Esperimenti |
 
-#### Other Languages
-| Linguaggio | Livello | Progetti | Esperienza |
-|------------|---------|----------|------------|
-| **Rust** | **D** | 1 repo | <1 anno - Sperimentazione e learning |
-| **C++** | **C** | 1 repo | 2+ anni - Audio development |
-| **Java** | **D** | 1 repo | <1 anno - Progetti legacy |
+#### Altri Linguaggi
+| Linguaggio | Livello | Progetti | Note |
+|------------|---------|----------|------|
+| **Rust** | ⭐ | 1 repo | Ho provato |
+| **C++** | ⭐ | 1 repo | Un progetto audio |
+| **Java** | ⭐ | 1 repo | Un vecchio progetto |
 
 ---
 
-## 📫 Contatti & Collaborazioni
+## 📫 Contatti
 
-Sono sempre interessato a nuove opportunità di collaborazione e progetti innovativi. Non esitare a contattarmi per:
+Se vuoi contattarmi:
 
-- 💼 Opportunità di lavoro e collaborazioni
-- 🚀 Progetti open-source
-- 🤝 Consulenze tecniche
-- 💡 Discussioni su tecnologie web, blockchain e audio
-
-**Canali di contatto:**
 - 🐙 **GitHub**: [@davvoz](https://github.com/davvoz)
-- 💼 **Portfolio**: 25+ siti web pubblicati tramite GitHub Pages
-- 📧 **Email**: Disponibile su richiesta via GitHub
+- 💼 **Portfolio**: Alcuni progetti su GitHub Pages
+- 📧 **Email**: Chiedimi via GitHub
 
 ---
 
 ## 📝 Note
 
-Questo README è stato generato automaticamente il 02 October 2025 alle 12:11 con un'analisi approfondita di tutte le repository pubbliche.
-
-**Totale linee di codice stimate**: ~3169260 righe circa 📝
+Questo README è stato aggiornato il 02 October 2025.
 
 ---
 
