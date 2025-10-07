@@ -82,60 +82,6 @@ Benvenuto nel mio profilo GitHub! Sono uno sviluppatore che sperimenta con diver
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=davvoz&theme=radical)
 
----
-
-## 🎨 Stack Tecnologico e Competenze
-
-### 📊 Competenze
-*Legenda: ⭐⭐⭐ Buono | ⭐⭐ Intermedio | ⭐ Base*
-
-#### Frontend Development
-| Tecnologia | Livello | Note |
-|------------|---------|------|
-| **JavaScript** | ⭐⭐⭐ | Linguaggio che uso di più |
-| **TypeScript** | ⭐⭐ | Lo uso quando serve |
-| **HTML/CSS** | ⭐⭐⭐ | Le basi |
-| **Angular** | ⭐⭐ | Esperimenti vari |
-| **Canvas API** | ⭐⭐ | Mi piace fare grafica |
-| **Web Audio API** | ⭐⭐ | Progetti audio |
-
-#### Backend & Tools
-| Tecnologia | Livello | Note |
-|------------|---------|------|
-| **Node.js** | ⭐⭐ | Per server semplici |
-| **REST APIs** | ⭐⭐ | Quando serve |
-| **WebAssembly** | ⭐ | Prove e test |
-| **Python** | ⭐ | Notebook per AI |
-
-#### Blockchain
-| Tecnologia | Livello | Note |
-|------------|---------|------|
-| **Steem** | ⭐⭐ | Ho fatto alcuni esperimenti |
-| **Hive** | ⭐⭐ | Integrazioni base |
-| **Web3** | ⭐ | Sto imparando |
-
-#### Multimedia & Graphics
-| Tecnologia | Livello | Note |
-|------------|---------|------|
-| **Audio Processing** | ⭐⭐ | Mi piace molto l'audio |
-| **Video Processing** | ⭐ | Qualche test |
-| **Graphics & Animation** | ⭐⭐ | Canvas e animazioni |
-
-#### AI & Machine Learning
-| Tecnologia | Livello | Note |
-|------------|---------|------|
-| **Stable Diffusion** | ⭐ | Fork per provare |
-| **GPT Integration** | ⭐ | Ho usato GPT per aiuto |
-| **Image Generation** | ⭐ | Esperimenti |
-
-#### Altri Linguaggi
-| Linguaggio | Livello | Note |
-|------------|---------|------|
-| **Rust** | ⭐ | Ho provato |
-| **C++** | ⭐ | Un progetto audio |
-| **Java** | ⭐ | Un vecchio progetto |
-
----
 
 ## 📫 Contatti
 
@@ -147,10 +93,5 @@ Se vuoi contattarmi:
 
 ---
 
-## 📝 Note
-
-Questo README è stato aggiornato il 02 October 2025.
-
----
 
 *Grazie per aver visitato il mio profilo! Continua a seguirmi per nuovi progetti interessanti!* 🚀
