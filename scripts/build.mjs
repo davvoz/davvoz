@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-// Genera le grafiche del profilo (assets/*.svg) e la lista dei progetti nel README
-// a partire dai repository pubblici di GitHub. Nessuna dipendenza: solo Node >= 20.
+// Builds the profile graphics (assets/*.svg) and the README project list
+// from the public GitHub repositories. No dependencies: just Node >= 20.
 //
-//   node scripts/build.mjs                   # usa l'API di GitHub (GITHUB_TOKEN opzionale)
-//   node scripts/build.mjs --data repos.json # usa un file locale (per test offline)
+//   node scripts/build.mjs                   # uses the GitHub API (GITHUB_TOKEN optional)
+//   node scripts/build.mjs --data repos.json # uses a local file (offline testing)
 
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -28,14 +28,14 @@ const C = {
 const MONO = "'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace";
 const SANS = "ui-sans-serif,-apple-system,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif";
 
-// ─── Tracce della Session View ────────────────────────────────────────────────
+// ─── Session View tracks ──────────────────────────────────────────────────────
 const TRACKS = [
   { id: 'audio', label: 'AUDIO', emoji: '🎛️', color: '#ff7849', re: /daw|audio|synth|seq|beat|piano|mixer|dsp|sound|music|ableton|midi|recorder/i },
   { id: 'games', label: 'GAMES', emoji: '🕹️', color: '#3ddc97', re: /game|arkanoid|cannone|tcg|monopol|space-station|life/i },
   { id: 'web3', label: 'WEB3', emoji: '⛓️', color: '#4cc9f0', re: /steem|hive|cur8|web3|faucet|crypto|chain/i },
   { id: 'gen', label: 'GENERATIVE', emoji: '✨', color: '#b388ff', re: /canvas|shape|poligon|knob|colonia|falling|fx|image|_ai|ai_|diffusion|deforum|emergent|clock/i },
 ];
-// Assegnazioni esplicite: vincono sulle regex.
+// Explicit assignments: these win over the regexes.
 const OVERRIDES = {
   proprietaemergenti: 'gen',
   reality: 'gen',
@@ -47,17 +47,25 @@ const OVERRIDES = {
 };
 const SLOTS = 6;
 
+// Notebooks carry their outputs inside the file and would dwarf everything else.
+const EXCLUDED_LANGS = ['Jupyter Notebook'];
+const LANG_COLORS = {
+  JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5', 'C++': '#f34b7d', C: '#8b949e',
+  HTML: '#e34c26', CSS: '#8e5cd9', SCSS: '#c6538c', Rust: '#dea584', Java: '#b07219', Shell: '#89e051',
+  WGSL: '#1a5e9a', GLSL: '#5686a5', CMake: '#DA3434', Go: '#00ADD8', Vue: '#41b883', Svelte: '#ff3e00',
+};
+
 // ─── Utility ──────────────────────────────────────────────────────────────────
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const r2 = (n) => Math.round(n * 100) / 100;
-const MONTHS = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso) => {
   const d = new Date(iso);
   return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 };
 const truncate = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
 
-// PRNG deterministico: stesso input → stesso SVG, così l'Action committa solo quando cambia qualcosa.
+// Deterministic PRNG: same input → same SVG, so the Action only commits when something actually changes.
 function rng(seedStr) {
   let h = 1779033703 ^ seedStr.length;
   for (let i = 0; i < seedStr.length; i++) h = Math.imul(h ^ seedStr.charCodeAt(i), 3432918353), (h = (h << 13) | (h >>> 19));
@@ -68,7 +76,7 @@ function rng(seedStr) {
   };
 }
 
-// Animazione "meter": altezza che rimbalza con picchi casuali ma riproducibili.
+// "Meter" animation: a height that bounces with random but reproducible peaks.
 function meterAnim(rand, x, baseY, w, maxH, fill, dur) {
   const n = 14;
   const hs = Array.from({ length: n }, () => r2(maxH * (0.15 + 0.85 * Math.pow(rand(), 0.8))));
@@ -80,22 +88,63 @@ function meterAnim(rand, x, baseY, w, maxH, fill, dur) {
     </rect>`;
 }
 
-// ─── Dati ─────────────────────────────────────────────────────────────────────
-async function loadRepos() {
-  const i = process.argv.indexOf('--data');
-  if (i !== -1) return JSON.parse(await readFile(process.argv[i + 1], 'utf8'));
+// ─── Data ─────────────────────────────────────────────────────────────────────
+const OFFLINE = process.argv.includes('--data');
+const HEADERS = { 'User-Agent': `${USER}-profile-builder`, Accept: 'application/vnd.github+json' };
+if (process.env.GITHUB_TOKEN) HEADERS.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
-  const headers = { 'User-Agent': `${USER}-profile-builder`, Accept: 'application/vnd.github+json' };
-  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+async function api(url) {
+  const res = await fetch(`https://api.github.com${url}`, { headers: HEADERS });
+  if (!res.ok) throw new Error(`GitHub API ${res.status} on ${url}: ${await res.text()}`);
+  return res.json();
+}
+
+async function loadRepos() {
+  if (OFFLINE) return JSON.parse(await readFile(process.argv[process.argv.indexOf('--data') + 1], 'utf8'));
   const all = [];
   for (let page = 1; page <= 10; page++) {
-    const res = await fetch(`https://api.github.com/users/${USER}/repos?per_page=100&type=owner&sort=pushed&page=${page}`, { headers });
-    if (!res.ok) throw new Error(`GitHub API ${res.status}: ${await res.text()}`);
-    const batch = await res.json();
+    const batch = await api(`/users/${USER}/repos?per_page=100&type=owner&sort=pushed&page=${page}`);
     all.push(...batch);
     if (batch.length < 100) break;
   }
   return all;
+}
+
+// Extra numbers for the stats card. Every call is optional: if one fails, its row is simply hidden.
+async function loadStats(data) {
+  const tryApi = async (url) => (OFFLINE ? null : api(url).catch((e) => (console.warn(e.message), null)));
+  const [user, commits] = await Promise.all([tryApi(`/users/${USER}`), tryApi(`/search/commits?q=author:${USER}&per_page=1`)]);
+
+  // Languages by bytes of code; offline (or if the API fails) falls back to counting primary languages.
+  let bytes = null;
+  if (!OFFLINE) {
+    const perRepo = await Promise.all(data.list.map((r) => tryApi(`/repos/${USER}/${r.name}/languages`)));
+    if (perRepo.every(Boolean)) {
+      bytes = {};
+      for (const langs of perRepo) for (const [l, n] of Object.entries(langs)) bytes[l] = (bytes[l] || 0) + n;
+    }
+  }
+  const basis = bytes ? 'by code size' : 'by repo count';
+  if (!bytes) {
+    bytes = {};
+    for (const r of data.list) if (r.language) bytes[r.language] = (bytes[r.language] || 0) + 1;
+  }
+  const entries = Object.entries(bytes).filter(([l]) => !EXCLUDED_LANGS.includes(l));
+  const total = entries.reduce((s, [, n]) => s + n, 0);
+  const languages = entries
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([name, n]) => ({ name, pct: (n / total) * 100 }));
+
+  return {
+    repos: data.list.length,
+    stars: data.stars,
+    commits: commits?.total_count ?? null,
+    followers: user?.followers ?? null,
+    since: user?.created_at ? new Date(user.created_at).getUTCFullYear() : data.firstYear,
+    languages,
+    basis,
+  };
 }
 
 function classify(repos) {
@@ -121,12 +170,12 @@ function classify(repos) {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 const PHRASES = [
-  'faccio suonare il browser',
-  'scrivo DAW per hobby (sì, davvero)',
-  'insegno alle particelle a vivere',
-  'costruisco giochi pixel per pixel',
-  'metto le cose on-chain su Steem',
-  'pair-programming con le AI dal 2022',
+  'making the browser sing',
+  'building DAWs for fun (yes, really)',
+  'teaching particles how to be alive',
+  'crafting games pixel by pixel',
+  'putting things on-chain on Steem',
+  'pair-programming with AIs since 2022',
 ];
 
 function wavePath(W, P, cy, amp, harm, phase) {
@@ -141,7 +190,7 @@ function wavePath(W, P, cy, amp, harm, phase) {
 
 function typewriter(x0, y, size, cw) {
   const TYPE = 0.055, HOLD = 1.6, ERASE = 0.02, GAP = 0.35;
-  // timeline: [tempo, fraseAttiva, caratteriVisibili]
+  // timeline: [time, activePhrase, visibleChars]
   const steps = [];
   let t = 0;
   PHRASES.forEach((p, i) => {
@@ -196,8 +245,8 @@ function hero(data) {
   for (let x = 50; x < W; x += 50) grid.push(`<line x1="${x}" y1="240" x2="${x}" y2="340" />`);
   for (const y of [265, 290, 315]) grid.push(`<line x1="0" y1="${y}" x2="${W}" y2="${y}" />`);
 
-  const cw = 13.2; // larghezza carattere mono a 22px
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="davvoz — codice, suono, giochi e GPU">
+  const cw = 13.2; // monospace glyph width at 22px
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="davvoz — code, sound, games and GPUs">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0f1320"/><stop offset="1" stop-color="${C.bg}"/>
@@ -228,26 +277,26 @@ function hero(data) {
     <rect width="${W}" height="${H}" fill="url(#bg)"/>
     <rect width="${W}" height="${H}" fill="url(#spot)"/>
 
-    <!-- barra superiore -->
+    <!-- top bar -->
     <g font-family="${MONO}" font-size="13" letter-spacing="2">
       <circle cx="56" cy="44" r="6" fill="${C.rec}">
         <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/>
       </circle>
       <text x="72" y="49" fill="${C.rec}">REC</text>
-      <text x="124" y="49" fill="${C.muted}">SESSION ${data.firstYear} → ${data.lastYear} · ${data.list.length} TRACCE · ★ ${data.stars}</text>
+      <text x="124" y="49" fill="${C.muted}">SESSION ${data.firstYear} → ${data.lastYear} · ${data.list.length} TRACKS · ★ ${data.stars}</text>
     </g>
 
-    <!-- nome + tagline -->
+    <!-- name + tagline -->
     <text x="48" y="150" font-family="${SANS}" font-size="96" font-weight="800" letter-spacing="-3" fill="url(#name)">davvoz</text>
     <text x="52" y="194" font-family="${MONO}" font-size="22" fill="${C.amber}">&gt;</text>
     ${typewriter(80, 194, 22, cw)}
 
-    <!-- manopole -->
+    <!-- knobs -->
     ${knob(880, 110, 'CODE', TRACKS[2].color, 7, rand)}
     ${knob(990, 110, 'SOUND', TRACKS[0].color, 5.5, rand)}
     ${knob(1100, 110, 'PLAY', TRACKS[1].color, 8.5, rand)}
 
-    <!-- oscilloscopio -->
+    <!-- oscilloscope -->
     <rect x="0" y="240" width="${W}" height="100" fill="#07090e" opacity="0.55"/>
     <g stroke="${C.line}" stroke-width="1" opacity="0.6">${grid.join('')}</g>
     <g clip-path="url(#scope)" mask="url(#edges)" filter="url(#glow)" fill="none" stroke-width="2.2" stroke-linejoin="round">
@@ -284,10 +333,10 @@ function session(data) {
   const cols = data.tracks.map((t, ti) => {
     const x = PAD + ti * (colW + GAP);
     const out = [];
-    // intestazione traccia
+    // track header
     out.push(`<rect x="${x}" y="${TOP + 16}" width="${colW}" height="${HEAD}" rx="6" fill="${t.color}"/>
       <text x="${x + 14}" y="${TOP + 16 + 23}" font-family="${MONO}" font-size="13" font-weight="700" letter-spacing="2" fill="${C.bg}">${t.label}</text>
-      <text x="${x + colW - 14}" y="${TOP + 16 + 23}" text-anchor="end" font-family="${MONO}" font-size="12" fill="${C.bg}" opacity="0.75">${t.repos.length} clip</text>`);
+      <text x="${x + colW - 14}" y="${TOP + 16 + 23}" text-anchor="end" font-family="${MONO}" font-size="12" fill="${C.bg}" opacity="0.75">${t.repos.length} clips</text>`);
 
     for (let s = 0; s < SLOTS; s++) {
       const y = clipsTop + s * (CLIP + CGAP);
@@ -328,7 +377,7 @@ function session(data) {
     out.push(`<rect x="${faderX}" y="${metersTop + METER_H / 2 - 2}" width="${faderW}" height="4" rx="2" fill="${C.line}"/>
       <rect x="${faderX}" y="${metersTop + METER_H / 2 - 2}" width="${r2(faderW * level)}" height="4" rx="2" fill="${t.color}"/>
       <rect x="${r2(faderX + faderW * level - 7)}" y="${metersTop + METER_H / 2 - 12}" width="14" height="24" rx="3" fill="${C.text}"/>
-      <text x="${faderX}" y="${metersTop + 20}" font-family="${MONO}" font-size="10.5" letter-spacing="1" fill="${C.muted}">VOL · ${t.repos.length} repo</text>
+      <text x="${faderX}" y="${metersTop + 20}" font-family="${MONO}" font-size="10.5" letter-spacing="1" fill="${C.muted}">VOL · ${t.repos.length} repos</text>
       <text x="${faderX}" y="${metersTop + METER_H - 12}" font-family="${MONO}" font-size="10.5" letter-spacing="1" fill="${C.muted}">★ ${t.repos.reduce((s, r) => s + (r.stargazers_count || 0), 0)}</text>`);
     return out.join('\n      ');
   });
@@ -343,7 +392,7 @@ function session(data) {
 
   const bpm = data.list.length;
   const np = latest ? `${latest.name}` : '—';
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Session view dei progetti di davvoz">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Session view of davvoz's projects">
   <defs>
     ${meterDefs}
     <clipPath id="session-frame"><rect width="${W}" height="${H}" rx="18"/></clipPath>
@@ -384,18 +433,18 @@ function session(data) {
 
     ${cols.join('\n    ')}
 
-    <text x="${PAD}" y="${H - 16}" font-family="${MONO}" font-size="11" fill="${C.muted}">Ogni traccia mostra i ${SLOTS} repo con il push più recente · la clip in play è l'ultima toccata · generato da scripts/build.mjs</text>
+    <text x="${PAD}" y="${H - 16}" font-family="${MONO}" font-size="11" fill="${C.muted}">Each track shows its ${SLOTS} most recently pushed repos · the playing clip is the latest one touched · generated by scripts/build.mjs</text>
   </g>
   <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="18" fill="none" stroke="${C.line}"/>
 </svg>
 `;
 }
 
-// ─── FOOTER (vinile) ──────────────────────────────────────────────────────────
+// ─── FOOTER (vinyl) ───────────────────────────────────────────────────────────
 function footer() {
   const W = 1200, H = 150, cx = 110, cy = 75;
   const grooves = [58, 52, 46, 40, 34].map((r) => `<circle r="${r}" fill="none" stroke="#1d2330" stroke-width="1.2"/>`).join('');
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Grazie per l'ascolto">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Thanks for listening">
   <defs>
     <linearGradient id="label" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="${TRACKS[0].color}"/><stop offset="1" stop-color="${TRACKS[3].color}"/>
@@ -411,12 +460,12 @@ function footer() {
       ${grooves}
       <circle r="24" fill="url(#label)"/>
       <text y="-6" text-anchor="middle" font-family="${MONO}" font-size="7" font-weight="700" fill="${C.bg}" letter-spacing="1">DAVVOZ</text>
-      <text y="10" text-anchor="middle" font-family="${MONO}" font-size="6" fill="${C.bg}">LATO A</text>
+      <text y="10" text-anchor="middle" font-family="${MONO}" font-size="6" fill="${C.bg}">SIDE A</text>
       <circle r="3" fill="${C.bg}"/>
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.8s" repeatCount="indefinite"/>
     </g>
     <circle r="64" fill="url(#shine)"/>
-    <!-- braccio -->
+    <!-- tonearm -->
     <g transform="translate(78 -58)">
       <circle r="7" fill="${C.panel2}" stroke="${C.line}" stroke-width="2"/>
       <path d="M0 0 L-8 72 L-26 88" fill="none" stroke="${C.muted}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -424,8 +473,8 @@ function footer() {
     </g>
   </g>
   <g font-family="${MONO}">
-    <text x="240" y="66" font-size="22" font-weight="700" fill="${C.text}">Grazie per l'ascolto.</text>
-    <text x="240" y="96" font-size="14" fill="${C.muted}">Il lato B è ancora in studio: commit in arrivo.</text>
+    <text x="240" y="66" font-size="22" font-weight="700" fill="${C.text}">Thanks for listening.</text>
+    <text x="240" y="96" font-size="14" fill="${C.muted}">Side B is still in the studio: commits incoming.</text>
   </g>
   <g transform="translate(${W - 230} 55)">
     ${Array.from({ length: 24 }, (_, i) => {
@@ -443,7 +492,78 @@ function footer() {
 `;
 }
 
-// ─── README: lista cliccabile ────────────────────────────────────────────────
+// ─── STATS (master bus + spectrum) ────────────────────────────────────────────
+function stats(st) {
+  const W = 1200, H = 290, PAD = 24;
+  const rand = rng('stats:' + st.languages.map((l) => l.name).join(','));
+  const fmt = (n) => n.toLocaleString('en-US');
+
+  // left: master bus
+  const LW = 420;
+  const rows = [
+    ['ORIGINAL REPOS', fmt(st.repos)],
+    ['STARS EARNED', fmt(st.stars)],
+    st.commits != null && ['PUBLIC COMMITS', fmt(st.commits)],
+    st.followers != null && ['FOLLOWERS', fmt(st.followers)],
+    ['ON GITHUB SINCE', String(st.since)],
+  ].filter(Boolean);
+  const rowH = 190 / rows.length;
+  const left = rows
+    .map(([label, value], i) => {
+      const y = 76 + i * rowH;
+      const led = TRACKS[i % TRACKS.length].color;
+      return `<circle cx="${PAD + 22}" cy="${r2(y + rowH / 2 - 4)}" r="4" fill="${led}">
+        <animate attributeName="opacity" values="1;0.35;1" dur="${r2(1.2 + rand() * 1.6)}s" repeatCount="indefinite"/>
+      </circle>
+      <text x="${PAD + 38}" y="${r2(y + rowH / 2)}" font-family="${MONO}" font-size="12" letter-spacing="2" fill="${C.muted}">${label}</text>
+      <text x="${PAD + LW - 20}" y="${r2(y + rowH / 2 + 3)}" text-anchor="end" font-family="${MONO}" font-size="22" font-weight="700" fill="${C.text}">${esc(value)}</text>
+      ${i < rows.length - 1 ? `<line x1="${PAD + 16}" y1="${r2(y + rowH - 2)}" x2="${PAD + LW - 16}" y2="${r2(y + rowH - 2)}" stroke="${C.line}" stroke-dasharray="2 4"/>` : ''}`;
+    })
+    .join('\n      ');
+
+  // right: spectrum, one LED column per language
+  const RX = PAD + LW + 24, RW = W - RX - PAD;
+  const SEG = 18, SEG_H = 6, SEG_GAP = 2, BAR_W = 40, TOP = 64;
+  const slot = RW / Math.max(st.languages.length, 1);
+  const maxPct = Math.max(...st.languages.map((l) => l.pct), 1);
+  const bars = st.languages
+    .map((l, i) => {
+      const cx = RX + slot * i + slot / 2;
+      const lit = Math.max(1, Math.round((l.pct / maxPct) * SEG));
+      const color = LANG_COLORS[l.name] ?? TRACKS[i % TRACKS.length].color;
+      const segs = Array.from({ length: SEG }, (_, k) => {
+        const y = TOP + (SEG - 1 - k) * (SEG_H + SEG_GAP);
+        const on = k < lit;
+        const flicker = on && k >= lit - 2 ? `<animate attributeName="opacity" values="1;0.3;1" dur="${r2(0.7 + rand() * 1.1)}s" begin="${r2(rand())}s" repeatCount="indefinite"/>` : '';
+        return `<rect x="${r2(cx - BAR_W / 2)}" y="${y}" width="${BAR_W}" height="${SEG_H}" rx="1.5" fill="${on ? color : C.panel2}">${flicker}</rect>`;
+      }).join('');
+      return `${segs}
+      <text x="${r2(cx)}" y="${TOP + SEG * (SEG_H + SEG_GAP) + 20}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${C.text}">${esc(truncate(l.name, 11))}</text>
+      <text x="${r2(cx)}" y="${TOP + SEG * (SEG_H + SEG_GAP) + 38}" text-anchor="middle" font-family="${MONO}" font-size="11" fill="${C.amber}">${l.pct.toFixed(1)}%</text>`;
+    })
+    .join('\n      ');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="GitHub stats and most used languages of davvoz">
+  <defs><clipPath id="stats-frame"><rect width="${W}" height="${H}" rx="18"/></clipPath></defs>
+  <g clip-path="url(#stats-frame)">
+    <rect width="${W}" height="${H}" fill="${C.bg}"/>
+    <rect x="${PAD}" y="${PAD}" width="${LW}" height="${H - PAD * 2}" rx="12" fill="${C.panel}" stroke="${C.line}"/>
+    <rect x="${RX - 8}" y="${PAD}" width="${RW + 8}" height="${H - PAD * 2}" rx="12" fill="${C.panel}" stroke="${C.line}"/>
+    <g font-family="${MONO}" font-size="11" letter-spacing="2">
+      <text x="${PAD + 16}" y="${PAD + 26}" fill="${C.amber}" font-weight="700">MASTER BUS</text>
+      <text x="${PAD + LW - 16}" y="${PAD + 26}" text-anchor="end" fill="${C.muted}">STATS</text>
+      <text x="${RX + 8}" y="${PAD + 26}" fill="${C.amber}" font-weight="700">SPECTRUM</text>
+      <text x="${RX + RW - 16}" y="${PAD + 26}" text-anchor="end" fill="${C.muted}">TOP LANGUAGES · ${st.basis.toUpperCase()}</text>
+    </g>
+    ${left}
+    ${bars}
+  </g>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="18" fill="none" stroke="${C.line}"/>
+</svg>
+`;
+}
+
+// ─── README: clickable list ───────────────────────────────────────────────────
 function mixerMarkdown(data) {
   return data.tracks
     .map((t) => `**${t.emoji} ${t.label}** — ${t.repos.map((r) => `[${r.name}](${r.html_url})`).join(' · ')}`)
@@ -454,7 +574,7 @@ async function updateReadme(md) {
   const START = '<!-- MIXER:START -->', END = '<!-- MIXER:END -->';
   const src = await readFile(README, 'utf8');
   const a = src.indexOf(START), b = src.indexOf(END);
-  if (a === -1 || b === -1) return console.warn('README: marcatori MIXER non trovati, salto.');
+  if (a === -1 || b === -1) return console.warn('README: MIXER markers not found, skipping.');
   await writeFile(README, src.slice(0, a + START.length) + '\n\n' + md + '\n\n' + src.slice(b));
 }
 
@@ -463,7 +583,9 @@ const data = classify(await loadRepos());
 await writeFile(path.join(ASSETS, 'hero.svg'), hero(data));
 await writeFile(path.join(ASSETS, 'session.svg'), session(data));
 await writeFile(path.join(ASSETS, 'footer.svg'), footer());
+const st = await loadStats(data);
+await writeFile(path.join(ASSETS, 'stats.svg'), stats(st));
 await updateReadme(mixerMarkdown(data));
 console.log(
-  `ok · ${data.list.length} repo · ` + data.tracks.map((t) => `${t.label}:${t.repos.length}`).join(' ') + ` · now playing: ${data.list[0]?.name}`,
+  `ok · ${data.list.length} repos · ` + data.tracks.map((t) => `${t.label}:${t.repos.length}`).join(' ') + ` · now playing: ${data.list[0]?.name} · langs (${st.basis}): ` + st.languages.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(', '),
 );

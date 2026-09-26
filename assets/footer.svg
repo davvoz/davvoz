@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-label="Grazie per l'ascolto">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-label="Thanks for listening">
   <defs>
     <linearGradient id="label" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ff7849"/><stop offset="1" stop-color="#b388ff"/>
@@ -14,12 +14,12 @@
       <circle r="58" fill="none" stroke="#1d2330" stroke-width="1.2"/><circle r="52" fill="none" stroke="#1d2330" stroke-width="1.2"/><circle r="46" fill="none" stroke="#1d2330" stroke-width="1.2"/><circle r="40" fill="none" stroke="#1d2330" stroke-width="1.2"/><circle r="34" fill="none" stroke="#1d2330" stroke-width="1.2"/>
       <circle r="24" fill="url(#label)"/>
       <text y="-6" text-anchor="middle" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="7" font-weight="700" fill="#0b0e14" letter-spacing="1">DAVVOZ</text>
-      <text y="10" text-anchor="middle" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="6" fill="#0b0e14">LATO A</text>
+      <text y="10" text-anchor="middle" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="6" fill="#0b0e14">SIDE A</text>
       <circle r="3" fill="#0b0e14"/>
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.8s" repeatCount="indefinite"/>
     </g>
     <circle r="64" fill="url(#shine)"/>
-    <!-- braccio -->
+    <!-- tonearm -->
     <g transform="translate(78 -58)">
       <circle r="7" fill="#181e2b" stroke="#242c3b" stroke-width="2"/>
       <path d="M0 0 L-8 72 L-26 88" fill="none" stroke="#7d8590" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -27,8 +27,8 @@
     </g>
   </g>
   <g font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
-    <text x="240" y="66" font-size="22" font-weight="700" fill="#e6edf3">Grazie per l'ascolto.</text>
-    <text x="240" y="96" font-size="14" fill="#7d8590">Il lato B è ancora in studio: commit in arrivo.</text>
+    <text x="240" y="66" font-size="22" font-weight="700" fill="#e6edf3">Thanks for listening.</text>
+    <text x="240" y="96" font-size="14" fill="#7d8590">Side B is still in the studio: commits incoming.</text>
   </g>
   <g transform="translate(970 55)">
     <rect x="0" width="5" rx="1" fill="#ff7849" opacity="0.85" y="13.09" height="26.91">
