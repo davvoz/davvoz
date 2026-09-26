@@ -1,8 +1,8 @@
-name: 🎛️ Registra la Session View
+name: 🎛️ Record the Session View
 
 on:
   schedule:
-    - cron: '17 4 * * *' # ogni notte
+    - cron: '17 4 * * *' # every night
   workflow_dispatch:
   push:
     branches: [main]
@@ -27,19 +27,19 @@ jobs:
         with:
           node-version: 22
 
-      - name: Genera SVG e lista progetti
+      - name: Build SVGs and project list
         run: node scripts/build.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit se qualcosa è cambiato
+      - name: Commit if anything changed
         run: |
           if git diff --quiet; then
-            echo "Nessuna novità in studio."
+            echo "Nothing new in the studio."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
           git add assets README.md
-          git commit -m "🎛️ Aggiorna la Session View"
+          git commit -m "🎛️ Update the Session View"
           git push
