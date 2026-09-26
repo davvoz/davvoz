@@ -1,0 +1,45 @@
+name: 🎛️ Registra la Session View
+
+on:
+  schedule:
+    - cron: '17 4 * * *' # ogni notte
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/session.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: session-view
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Genera SVG e lista progetti
+        run: node scripts/build.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit se qualcosa è cambiato
+        run: |
+          if git diff --quiet; then
+            echo "Nessuna novità in studio."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add assets README.md
+          git commit -m "🎛️ Aggiorna la Session View"
+          git push
