@@ -35,7 +35,7 @@
         <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/>
       </circle>
       <text x="72" y="49" fill="#ff4d6d">REC</text>
-      <text x="124" y="49" fill="#7d8590">SESSION 2017 → 2026 · 69 TRACKS · ★ 21</text>
+      <text x="124" y="49" fill="#7d8590">SESSION 2017 → 2026 · 70 TRACKS · ★ 21</text>
     </g>
 
     <!-- name + tagline -->
