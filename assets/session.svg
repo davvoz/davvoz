@@ -105,7 +105,7 @@
         <animate attributeName="opacity" values="1;0.25;1" dur="1.17s" repeatCount="indefinite"/>
       </path>
       <text x="350" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">magic8-tcg</text>
-      <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 1 Oct 2026</text>
+      <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 3 Oct 2026</text>
       <rect x="316" y="178" width="276" height="44" rx="5" fill="#3ddc97" fill-opacity="0.13" stroke="#3ddc97" stroke-opacity="0.35"/>
       <path d="M330 193l10 7l-10 7z" fill="none" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/>
       <text x="350" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">magic8</text>
@@ -151,7 +151,7 @@
         <animate attributeName="opacity" values="1;0.25;1" dur="1.05s" repeatCount="indefinite"/>
       </path>
       <text x="642" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">cur8fun</text>
-      <text x="642" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 15 Jul 2026 · ★2</text>
+      <text x="642" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 2 Oct 2026 · ★2</text>
       <rect x="608" y="178" width="276" height="44" rx="5" fill="#4cc9f0" fill-opacity="0.13" stroke="#4cc9f0" stroke-opacity="0.35"/>
       <path d="M622 193l10 7l-10 7z" fill="none" stroke="#4cc9f0" stroke-width="1.5" stroke-linejoin="round"/>
       <text x="642" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">cur8showcase</text>
