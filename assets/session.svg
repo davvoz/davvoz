@@ -35,7 +35,7 @@
       <text x="242" y="43" font-size="10" fill="#7d8590" opacity="0.8">1 beat = 1 repo</text>
 
       <text x="1176" y="30" text-anchor="end" font-size="10" letter-spacing="1.5" fill="#7d8590">NOW PLAYING</text>
-      <text x="1176" y="46" text-anchor="end" font-size="14" font-weight="700" fill="#4cc9f0">▶ cur8fun</text>
+      <text x="1176" y="46" text-anchor="end" font-size="14" font-weight="700" fill="#3ddc97">▶ magic8-tcg</text>
     </g>
     <!-- timeline -->
     <g transform="translate(400 0)">
