@@ -35,7 +35,7 @@
       <text x="242" y="43" font-size="10" fill="#7d8590" opacity="0.8">1 beat = 1 repo</text>
 
       <text x="1176" y="30" text-anchor="end" font-size="10" letter-spacing="1.5" fill="#7d8590">NOW PLAYING</text>
-      <text x="1176" y="46" text-anchor="end" font-size="14" font-weight="700" fill="#3ddc97">▶ Ggameplatform</text>
+      <text x="1176" y="46" text-anchor="end" font-size="14" font-weight="700" fill="#3ddc97">▶ magic8-tcg</text>
     </g>
     <!-- timeline -->
     <g transform="translate(400 0)">
@@ -104,11 +104,11 @@
       <path d="M330 140l11 8l-11 8z" fill="#0b0e14">
         <animate attributeName="opacity" values="1;0.25;1" dur="1.17s" repeatCount="indefinite"/>
       </path>
-      <text x="350" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">Ggameplatform</text>
-      <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 5 Oct 2026</text>
+      <text x="350" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">magic8-tcg</text>
+      <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 8 Oct 2026</text>
       <rect x="316" y="178" width="276" height="44" rx="5" fill="#3ddc97" fill-opacity="0.13" stroke="#3ddc97" stroke-opacity="0.35"/>
       <path d="M330 193l10 7l-10 7z" fill="none" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="350" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">magic8-tcg</text>
+      <text x="350" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">Ggameplatform</text>
       <text x="350" y="212" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">JavaScript · 5 Oct 2026</text>
       <rect x="316" y="230" width="276" height="44" rx="5" fill="#3ddc97" fill-opacity="0.13" stroke="#3ddc97" stroke-opacity="0.35"/>
       <path d="M330 245l10 7l-10 7z" fill="none" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/>
