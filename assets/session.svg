@@ -30,12 +30,12 @@
     </g>
     <g font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
       <rect x="140" y="18" width="92" height="28" rx="5" fill="#181e2b" stroke="#242c3b"/>
-      <text x="186" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#ffb454">71.00</text>
+      <text x="186" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#ffb454">72.00</text>
       <text x="242" y="30" font-size="10" letter-spacing="1.5" fill="#7d8590">BPM</text>
       <text x="242" y="43" font-size="10" fill="#7d8590" opacity="0.8">1 beat = 1 repo</text>
 
       <text x="1176" y="30" text-anchor="end" font-size="10" letter-spacing="1.5" fill="#7d8590">NOW PLAYING</text>
-      <text x="1176" y="46" text-anchor="end" font-size="14" font-weight="700" fill="#3ddc97">▶ magic8-tcg</text>
+      <text x="1176" y="46" text-anchor="end" font-size="14" font-weight="700" fill="#ff7849">▶ sound_player_music_visualizer</text>
     </g>
     <!-- timeline -->
     <g transform="translate(400 0)">
@@ -50,59 +50,59 @@
 
     <rect x="24" y="80" width="276" height="36" rx="6" fill="#ff7849"/>
       <text x="38" y="103" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="2" fill="#0b0e14">AUDIO</text>
-      <text x="286" y="103" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#0b0e14" opacity="0.75">20 clips</text>
+      <text x="286" y="103" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#0b0e14" opacity="0.75">21 clips</text>
       <rect x="24" y="126" width="276" height="44" rx="5" fill="#ff7849"/>
       <rect x="24" y="166" width="0" height="4" fill="#0b0e14" opacity="0.35">
-        <animate attributeName="width" values="0;276" dur="4.4s" repeatCount="indefinite"/>
+        <animate attributeName="width" values="0;276" dur="5.95s" repeatCount="indefinite"/>
       </rect>
       <path d="M38 140l11 8l-11 8z" fill="#0b0e14">
-        <animate attributeName="opacity" values="1;0.25;1" dur="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.25;1" dur="1.49s" repeatCount="indefinite"/>
       </path>
-      <text x="58" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">DAW_2026</text>
-      <text x="58" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">C++ · 31 Aug 2026</text>
+      <text x="58" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">sound_player_music_visualizer</text>
+      <text x="58" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 24 Oct 2026</text>
       <rect x="24" y="178" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 193l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="58" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">audiorecorder</text>
-      <text x="58" y="212" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 30 Dec 2025</text>
+      <text x="58" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">DAW_2026</text>
+      <text x="58" y="212" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">C++ · 31 Aug 2026</text>
       <rect x="24" y="230" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 245l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="58" y="249" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">audiofx</text>
-      <text x="58" y="264" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 11 Dec 2025</text>
+      <text x="58" y="249" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">audiorecorder</text>
+      <text x="58" y="264" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 30 Dec 2025</text>
       <rect x="24" y="282" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 297l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="58" y="301" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">Advanced-Web-Audio-API-Playg…</text>
-      <text x="58" y="316" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">JavaScript · 31 Oct 2025 · ★2</text>
+      <text x="58" y="301" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">audiofx</text>
+      <text x="58" y="316" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 11 Dec 2025</text>
       <rect x="24" y="334" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 349l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="58" y="353" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">pythondaw</text>
-      <text x="58" y="368" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 23 Oct 2025</text>
+      <text x="58" y="353" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">Advanced-Web-Audio-API-Playg…</text>
+      <text x="58" y="368" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">JavaScript · 31 Oct 2025 · ★2</text>
       <rect x="24" y="386" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 401l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="58" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">AdvancedWebAudioPlaygroundAn…</text>
-      <text x="58" y="420" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">TypeScript · 2 Oct 2025</text>
+      <text x="58" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">pythondaw</text>
+      <text x="58" y="420" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 23 Oct 2025</text>
       <rect x="24" y="448" width="276" height="70" rx="6" fill="#121722" stroke="#242c3b"/>
-      <rect x="40" y="473.06" width="8" height="36.94" rx="1.5" fill="url(#meter0)">
-      <animate attributeName="height" values="36.94;38.43;27.69;39.72;34.55;22.14;40.72;49.72;44.89;35.05;52.86;37.21;22.82;19.83;36.94" dur="1.98s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="473.06;471.57;482.31;470.28;475.45;487.86;469.28;460.28;465.11;474.95;457.14;472.79;487.18;490.17;473.06" dur="1.98s" repeatCount="indefinite"/>
+      <rect x="40" y="475.36" width="8" height="34.64" rx="1.5" fill="url(#meter0)">
+      <animate attributeName="height" values="34.64;41.42;10.35;15.81;28.78;33.72;23.51;46.17;19.21;24.87;14.38;40.49;50.56;26.02;34.64" dur="1.96s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="475.36;468.58;499.65;494.19;481.22;476.28;486.49;463.83;490.79;485.13;495.62;469.51;459.44;483.98;475.36" dur="1.96s" repeatCount="indefinite"/>
     </rect>
-      <rect x="52" y="487.48" width="8" height="22.52" rx="1.5" fill="url(#meter0)">
-      <animate attributeName="height" values="22.52;48.85;45.18;52.03;31.81;44.08;50.59;42.33;46.4;32.25;33.4;35.71;13.1;20.33;22.52" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="487.48;461.15;464.82;457.97;478.19;465.92;459.41;467.67;463.6;477.75;476.6;474.29;496.9;489.67;487.48" dur="2.4s" repeatCount="indefinite"/>
+      <rect x="52" y="488.07" width="8" height="21.93" rx="1.5" fill="url(#meter0)">
+      <animate attributeName="height" values="21.93;28.16;19.67;28.64;28.47;48.47;35.53;34.66;53.54;48.53;34.24;10.34;19.76;35.65;21.93" dur="1.88s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="488.07;481.84;490.33;481.36;481.53;461.53;474.47;475.34;456.46;461.47;475.76;499.66;490.24;474.35;488.07" dur="1.88s" repeatCount="indefinite"/>
     </rect>
       <rect x="88" y="481" width="196" height="4" rx="2" fill="#242c3b"/>
       <rect x="88" y="481" width="196" height="4" rx="2" fill="#ff7849"/>
       <rect x="277" y="471" width="14" height="24" rx="3" fill="#e6edf3"/>
-      <text x="88" y="468" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#7d8590">VOL · 20 repos</text>
+      <text x="88" y="468" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#7d8590">VOL · 21 repos</text>
       <text x="88" y="506" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#7d8590">★ 6</text>
     <rect x="316" y="80" width="276" height="36" rx="6" fill="#3ddc97"/>
       <text x="330" y="103" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="2" fill="#0b0e14">GAMES</text>
       <text x="578" y="103" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#0b0e14" opacity="0.75">13 clips</text>
       <rect x="316" y="126" width="276" height="44" rx="5" fill="#3ddc97"/>
       <rect x="316" y="166" width="0" height="4" fill="#0b0e14" opacity="0.35">
-        <animate attributeName="width" values="0;276" dur="4.67s" repeatCount="indefinite"/>
+        <animate attributeName="width" values="0;276" dur="5.5s" repeatCount="indefinite"/>
       </rect>
       <path d="M330 140l11 8l-11 8z" fill="#0b0e14">
-        <animate attributeName="opacity" values="1;0.25;1" dur="1.17s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.25;1" dur="1.38s" repeatCount="indefinite"/>
       </path>
       <text x="350" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">magic8-tcg</text>
       <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 17 Oct 2026</text>
@@ -127,13 +127,13 @@
       <text x="350" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">steemplatformgame2</text>
       <text x="350" y="420" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">Python · 6 Nov 2025</text>
       <rect x="316" y="448" width="276" height="70" rx="6" fill="#121722" stroke="#242c3b"/>
-      <rect x="332" y="475.05" width="8" height="34.95" rx="1.5" fill="url(#meter1)">
-      <animate attributeName="height" values="34.95;51.57;9.75;23.27;41.47;41.32;18.22;32.58;29.44;36.66;51.38;31.24;37.83;36.66;34.95" dur="1.75s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="475.05;458.43;500.25;486.73;468.53;468.68;491.78;477.42;480.56;473.34;458.62;478.76;472.17;473.34;475.05" dur="1.75s" repeatCount="indefinite"/>
+      <rect x="332" y="495.53" width="8" height="14.47" rx="1.5" fill="url(#meter1)">
+      <animate attributeName="height" values="14.47;17.49;31.99;43.73;19.75;13.32;34.19;23.46;21.68;36.1;11.01;38.08;13.55;18.01;14.47" dur="1.72s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="495.53;492.51;478.01;466.27;490.25;496.68;475.81;486.54;488.32;473.9;498.99;471.92;496.45;491.99;495.53" dur="1.72s" repeatCount="indefinite"/>
     </rect>
-      <rect x="344" y="466.67" width="8" height="43.33" rx="1.5" fill="url(#meter1)">
-      <animate attributeName="height" values="43.33;47.37;45.36;49.75;33.53;29.53;44.83;31.88;17.98;36.12;25.99;24.44;12.55;51.07;43.33" dur="1.87s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="466.67;462.63;464.64;460.25;476.47;480.47;465.17;478.12;492.02;473.88;484.01;485.56;497.45;458.93;466.67" dur="1.87s" repeatCount="indefinite"/>
+      <rect x="344" y="484.95" width="8" height="25.05" rx="1.5" fill="url(#meter1)">
+      <animate attributeName="height" values="25.05;32.47;34.21;37.36;10.51;19.95;11.41;41.97;39.5;21.6;45.25;46.19;44.66;41.01;25.05" dur="1.99s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="484.95;477.53;475.79;472.64;499.49;490.05;498.59;468.03;470.5;488.4;464.75;463.81;465.34;468.99;484.95" dur="1.99s" repeatCount="indefinite"/>
     </rect>
       <rect x="380" y="481" width="196" height="4" rx="2" fill="#242c3b"/>
       <rect x="380" y="481" width="150.92" height="4" rx="2" fill="#3ddc97"/>
@@ -145,10 +145,10 @@
       <text x="870" y="103" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#0b0e14" opacity="0.75">11 clips</text>
       <rect x="608" y="126" width="276" height="44" rx="5" fill="#4cc9f0"/>
       <rect x="608" y="166" width="0" height="4" fill="#0b0e14" opacity="0.35">
-        <animate attributeName="width" values="0;276" dur="4.21s" repeatCount="indefinite"/>
+        <animate attributeName="width" values="0;276" dur="3.72s" repeatCount="indefinite"/>
       </rect>
       <path d="M622 140l11 8l-11 8z" fill="#0b0e14">
-        <animate attributeName="opacity" values="1;0.25;1" dur="1.05s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.25;1" dur="0.93s" repeatCount="indefinite"/>
       </path>
       <text x="642" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">cur8fun</text>
       <text x="642" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 4 Oct 2026 · ★2</text>
@@ -173,13 +173,13 @@
       <text x="642" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">cur8</text>
       <text x="642" y="420" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">TypeScript · 11 Jan 2025</text>
       <rect x="608" y="448" width="276" height="70" rx="6" fill="#121722" stroke="#242c3b"/>
-      <rect x="624" y="457.57" width="8" height="52.43" rx="1.5" fill="url(#meter2)">
-      <animate attributeName="height" values="52.43;42.6;44.7;36.01;36.07;20.08;17.8;49.66;11.13;49.41;31.15;32.25;23.98;14.32;52.43" dur="1.6s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="457.57;467.4;465.3;473.99;473.93;489.92;492.2;460.34;498.87;460.59;478.85;477.75;486.02;495.68;457.57" dur="1.6s" repeatCount="indefinite"/>
+      <rect x="624" y="464.17" width="8" height="45.83" rx="1.5" fill="url(#meter2)">
+      <animate attributeName="height" values="45.83;47.57;28.07;31.53;46.28;45.91;50.08;33.64;49.27;17.66;12.2;48.9;8.54;47.66;45.83" dur="2.57s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="464.17;462.43;481.93;478.47;463.72;464.09;459.92;476.36;460.73;492.34;497.8;461.1;501.46;462.34;464.17" dur="2.57s" repeatCount="indefinite"/>
     </rect>
-      <rect x="636" y="473.34" width="8" height="36.66" rx="1.5" fill="url(#meter2)">
-      <animate attributeName="height" values="36.66;25.66;34.51;53.04;40.24;48.58;51.54;34.46;38.85;35;19.85;53.49;36.03;27.82;36.66" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="473.34;484.34;475.49;456.96;469.76;461.42;458.46;475.54;471.15;475;490.15;456.51;473.97;482.18;473.34" dur="2.4s" repeatCount="indefinite"/>
+      <rect x="636" y="473.06" width="8" height="36.94" rx="1.5" fill="url(#meter2)">
+      <animate attributeName="height" values="36.94;24.48;8.82;15.86;50.51;41.77;21.44;13.5;49.98;35.04;39.86;53.71;50.66;49.85;36.94" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="473.06;485.52;501.18;494.14;459.49;468.23;488.56;496.5;460.02;474.96;470.14;456.29;459.34;460.15;473.06" dur="1.5s" repeatCount="indefinite"/>
     </rect>
       <rect x="672" y="481" width="196" height="4" rx="2" fill="#242c3b"/>
       <rect x="672" y="481" width="135.24" height="4" rx="2" fill="#4cc9f0"/>
@@ -191,10 +191,10 @@
       <text x="1162" y="103" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#0b0e14" opacity="0.75">12 clips</text>
       <rect x="900" y="126" width="276" height="44" rx="5" fill="#b388ff"/>
       <rect x="900" y="166" width="0" height="4" fill="#0b0e14" opacity="0.35">
-        <animate attributeName="width" values="0;276" dur="3.68s" repeatCount="indefinite"/>
+        <animate attributeName="width" values="0;276" dur="4.61s" repeatCount="indefinite"/>
       </rect>
       <path d="M914 140l11 8l-11 8z" fill="#0b0e14">
-        <animate attributeName="opacity" values="1;0.25;1" dur="0.92s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.25;1" dur="1.15s" repeatCount="indefinite"/>
       </path>
       <text x="934" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">reality</text>
       <text x="934" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 13 Sep 2026</text>
@@ -219,13 +219,13 @@
       <text x="934" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">VisualFXs</text>
       <text x="934" y="420" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">HTML · 2 Mar 2024</text>
       <rect x="900" y="448" width="276" height="70" rx="6" fill="#121722" stroke="#242c3b"/>
-      <rect x="916" y="464.12" width="8" height="45.88" rx="1.5" fill="url(#meter3)">
-      <animate attributeName="height" values="45.88;51.47;34.79;23.15;52.7;23.21;38.22;46.71;26.59;30.49;30.87;45.86;46.96;44.67;45.88" dur="1.46s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="464.12;458.53;475.21;486.85;457.3;486.79;471.78;463.29;483.41;479.51;479.13;464.14;463.04;465.33;464.12" dur="1.46s" repeatCount="indefinite"/>
+      <rect x="916" y="464.51" width="8" height="45.49" rx="1.5" fill="url(#meter3)">
+      <animate attributeName="height" values="45.49;24.29;24.43;51.09;48.05;49.64;51.31;47.2;16.92;26.93;40.95;17.92;28.4;20.74;45.49" dur="2.33s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="464.51;485.71;485.57;458.91;461.95;460.36;458.69;462.8;493.08;483.07;469.05;492.08;481.6;489.26;464.51" dur="2.33s" repeatCount="indefinite"/>
     </rect>
-      <rect x="928" y="486.36" width="8" height="23.64" rx="1.5" fill="url(#meter3)">
-      <animate attributeName="height" values="23.64;25.28;37.27;14.51;38.76;19.9;26.93;20.46;35.55;14.03;20.43;39.34;44.04;29.98;23.64" dur="2.35s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="486.36;484.72;472.73;495.49;471.24;490.1;483.07;489.54;474.45;495.97;489.57;470.66;465.96;480.02;486.36" dur="2.35s" repeatCount="indefinite"/>
+      <rect x="928" y="492.52" width="8" height="17.48" rx="1.5" fill="url(#meter3)">
+      <animate attributeName="height" values="17.48;44.58;39.53;29.36;25.77;53.31;30.85;23.66;39.28;50.71;39.6;32.16;41.34;29.63;17.48" dur="2.27s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="492.52;465.42;470.47;480.64;484.23;456.69;479.15;486.34;470.72;459.29;470.4;477.84;468.66;480.37;492.52" dur="2.27s" repeatCount="indefinite"/>
     </rect>
       <rect x="964" y="481" width="196" height="4" rx="2" fill="#242c3b"/>
       <rect x="964" y="481" width="143.08" height="4" rx="2" fill="#b388ff"/>
