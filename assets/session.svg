@@ -75,7 +75,7 @@
       <rect x="24" y="334" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 349l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
       <text x="58" y="353" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">Advanced-Web-Audio-API-Playg…</text>
-      <text x="58" y="368" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">JavaScript · 31 Oct 2025 · ★2</text>
+      <text x="58" y="368" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#7d8590">JavaScript · 31 Oct 2025 · ★3</text>
       <rect x="24" y="386" width="276" height="44" rx="5" fill="#ff7849" fill-opacity="0.13" stroke="#ff7849" stroke-opacity="0.35"/>
       <path d="M38 401l10 7l-10 7z" fill="none" stroke="#ff7849" stroke-width="1.5" stroke-linejoin="round"/>
       <text x="58" y="405" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">pythondaw</text>
@@ -93,7 +93,7 @@
       <rect x="88" y="481" width="196" height="4" rx="2" fill="#ff7849"/>
       <rect x="277" y="471" width="14" height="24" rx="3" fill="#e6edf3"/>
       <text x="88" y="468" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#7d8590">VOL · 21 repos</text>
-      <text x="88" y="506" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#7d8590">★ 6</text>
+      <text x="88" y="506" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#7d8590">★ 7</text>
     <rect x="316" y="80" width="276" height="36" rx="6" fill="#3ddc97"/>
       <text x="330" y="103" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="2" fill="#0b0e14">GAMES</text>
       <text x="578" y="103" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#0b0e14" opacity="0.75">13 clips</text>
@@ -105,7 +105,7 @@
         <animate attributeName="opacity" values="1;0.25;1" dur="1.38s" repeatCount="indefinite"/>
       </path>
       <text x="350" y="145" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" fill="#0b0e14">Ggameplatform</text>
-      <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 5 Nov 2026</text>
+      <text x="350" y="160" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#0b0e14" opacity="0.7">JavaScript · 8 Nov 2026</text>
       <rect x="316" y="178" width="276" height="44" rx="5" fill="#3ddc97" fill-opacity="0.13" stroke="#3ddc97" stroke-opacity="0.35"/>
       <path d="M330 193l10 7l-10 7z" fill="none" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/>
       <text x="350" y="197" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#e6edf3">magic8-tcg</text>
