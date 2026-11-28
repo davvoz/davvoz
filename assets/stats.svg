@@ -32,7 +32,7 @@
         <animate attributeName="opacity" values="1;0.35;1" dur="2.71s" repeatCount="indefinite"/>
       </circle>
       <text x="62" y="209" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#7d8590">FOLLOWERS</text>
-      <text x="424" y="212" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700" fill="#e6edf3">19</text>
+      <text x="424" y="212" text-anchor="end" font-family="'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="700" fill="#e6edf3">18</text>
       <line x1="40" y1="226" x2="428" y2="226" stroke="#242c3b" stroke-dasharray="2 4"/>
       <circle cx="46" cy="243" r="4" fill="#ff7849">
         <animate attributeName="opacity" values="1;0.35;1" dur="2.44s" repeatCount="indefinite"/>
